@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and drop</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div ng-app="App">
+
+    <div ng-model="list1" class="box" ng-dropzone>
+      <div ng-repeat="item in list1" ng-model="list1" ng-draggable>
+        {{item}}
+      </div>
+    </div>
+    <div ng-model="list2" class="box" ng-dropzone>
+      <div ng-repeat="item in list2" ng-model="list2" ng-draggable>
+        {{item}}
+      </div>
+    </div>
+    <div ng-model="list3" class="box" ng-dropzone>
+      <div ng-repeat="item in list3" ng-model="list3" ng-draggable>
+        {{item}}
+      </div>
+    </div>
+
+    <ul style="float: left">
+      <li ng-init="list1 = [{ name: 'Luiz' },{ name: 'Henrique' }]">{{list1}}</li>
+      <li ng-init="list2 = [{ name: 'Juão' },{ name: 'Carlos' }]">{{list2}}</li>
+      <li ng-init="list3 = [{ name: 'Maria' },{ name: 'Marcos' },{ name: 'Peter' }]">{{list3}}</li>
+    </ul>
+  
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script type="text/javascript" src="draganddrop.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
