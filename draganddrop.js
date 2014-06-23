@@ -2,11 +2,6 @@
 
 var DragAndDrop = angular.module('DragAndDrop', []);
 
-DragAndDrop.value('DragAndDropConfig', {
-  template: '<span ng-transclude></span>',
-  templateShadow: '<span></span>'
-});
-
 DragAndDrop.factory('facDropzone', function(){
   var registredElements = [];
 
@@ -50,13 +45,11 @@ DragAndDrop.factory('facDropzone', function(){
   };
 });
 
-DragAndDrop.directive('ngDraggable', ['$document', 'facDropzone', 'DragAndDropConfig', function($document, facDropzone, DragAndDropConfig) {
+DragAndDrop.directive('ngDraggable', ['$document', 'facDropzone', function($document, facDropzone) {
   var directive;
 
   directive = {  
     restrict: 'A',
-    replace: true,
-    transclude: true,
     require: 'ngModel',
     link: function(scope, element, attr, ngModel) {
       var startX = 0,
@@ -64,7 +57,7 @@ DragAndDrop.directive('ngDraggable', ['$document', 'facDropzone', 'DragAndDropCo
           x = 0,
           y = 0,
           delayMouseOut, dropZoneActive,
-          cloneElement = angular.element(directive.templateShadow);
+          cloneElement = angular.element('<div class="shadow-draggable"></div>');
 
       element.css({
         position: 'relative'
@@ -131,7 +124,6 @@ DragAndDrop.directive('ngDraggable', ['$document', 'facDropzone', 'DragAndDropCo
       element.on('mousedown', mouseDown);
     }
   };
-  angular.extend(directive, DragAndDropConfig);
 
   return directive;
 }]);
