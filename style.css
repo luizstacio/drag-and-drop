@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+.item {
+  display: inline-block;
+  position: relative;
+  padding: 5px 15px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #00B7FF;
+}
+
+.item:active {
+  cursor: move;
+}
+
+.box {
+  height: 280px;
+  width: 300px;
+  border: 1px solid #E3E3E3;
+  box-shadow: inset 1px 1px 15px #E3E3E3;
+  padding: 50px;
+  border-radius: 5px;
+  float: left;
+  margin: 0 10px;
+}
